@@ -1,0 +1,36 @@
+A Tale of `width` and `max-width`
+
+Link - (https://css-tricks.com/tale-width-max-width/)
+
+An interesting conversation came up in the comment thread of one of our posts last week, Considerations for Styling a Modal.
+
+
+You might want to limit the width of a modal, right? Kinda gives it that “modal” look on larger screens. Let’s say 600px sounds right. But, you want to make sure it doesn’t bust outside of its parent element. For example, avoid causing horizontal scrolling on a mobile screen.
+
+How would you do that?
+
+width: 600px; max-width: 100%;
+width: 100%; max-width: 600px;
+The answer: it doesn’t really matter, they are the same thing.
+
+Some people’s reactions:
+
+The second one is “more correct”
+Very big difference, actually
+The second one would be friendlier to a narrower parent width
+The first is garbage
+The second describes the behavior in a more logical way
+I agree it’s kind of mind bending. They seem like they would be different. A reduced test case is always a good plan.
+
+
+This might be a useful way to think about it: if the element would render wider than what max-width says it can be, max-width wins.
+
+Scenarios:
+
+Parent is 1000px wide
+Width says element should be 600px wide. That doesn’t break the max-width rule, so 600px it is!
+Width says element should be 1000px wide. That breaks max-width rule, so forces element down to 600px.
+Parent is 320px wide
+Width says element should be 600px wide. That breaks the max-width rule which says element can only be at most 320px wide, so 320px it is!
+Width says element should be 320px wide. That doesn’t break the max-width rule, so 320px it is!
+Whether the parent element is wider or narrower, these different rulesets end up agreeing with each other. (Although there is a difference when they are flex items.)

@@ -1,0 +1,58 @@
+/* Set default value of 1rem and 1em */
+html {
+  font-size: 36px;
+}
+@media (max-width: 1200px) {
+  html { font-size: 24px; }
+}
+@media (max-width: 700px) {
+  html { font-size: 12px; }
+}
+
+article {
+  border: 1px solid DimGray;
+  padding: .5rem;
+  margin: 1rem;
+  color: DimGray;
+}
+article > section {
+  background-color: MintCream;
+  padding: .5rem;
+  margin-bottom: .5rem;
+}
+article section section {
+  background-color: OldLace;
+}
+/* ems */
+.ems {
+  font-size: 1em;
+}
+.ems section:first-of-type {
+  font-size: 12px; /* overrides value of 1em but not the value of 1rem */
+}
+.ems section section {
+  font-size: 1em;
+}
+.ems section:nth-of-type(2) {
+  font-size: 50%; /* overrides value of 1em but not the value of 1rem */
+}
+/* rems */
+.rems {
+  font-size: 1rem;
+}
+.rems > section {
+  font-size: 12px; /* overrides value of 1em but not the value of 1rem */
+}
+.rems section section {
+  font-size: 1rem;
+}
+/* pxs */
+.pxs {
+  font-size: 24px;
+}
+.pxs > section {
+  font-size: 12px;
+}
+.pxs section section {
+  font-size: 8px;
+}

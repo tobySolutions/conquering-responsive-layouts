@@ -1,0 +1,335 @@
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Oswald', sans-serif; */
+
+/* Remember that you don't have to do anything fancy at small screens
+    Layput styles start at tablet/ desktop screen sizes
+*/
+
+/* Mobile-first css!! */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 5rem;
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: "Oswald", sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+
+  /* for nav-toggle positioning */
+  position: relative;
+}
+
+header {
+  background: #2e323f;
+  font-family: "Oswald", sans-serif;
+
+  text-align: center;
+  padding: 2em 0;
+}
+
+.logo {
+  height: 10px;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav__list {
+  padding: 0;
+  list-style: none;
+}
+
+.nav__list--primary {
+  margin-bottom: 2em;
+}
+
+.list__item {
+  margin-top: 0.9em;
+}
+
+.nav__link {
+  font-size: 1.125rem;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.button {
+  text-decoration: none;
+  color: #fff;
+  background: #a59678;
+  text-transform: uppercase;
+
+  font-family: "Oswald", sans-serif;
+  padding: 0.25em 0.85em;
+  border-radius: 100px;
+}
+
+/* Toggler styles from here */
+.nav {
+  visibility: hidden;
+  height: 0;
+  position: absolute;
+}
+
+.nav--visible {
+  visibility: visible;
+  height: auto;
+  position: relative;
+}
+
+.nav-toggle {
+  border: 0;
+  width: 3em;
+  height: 3em;
+  padding: 0em;
+  border-radius: 50%;
+  background: #072a2d;
+  color: white;
+  transition: opacity 250ms ease;
+
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus {
+  opacity: 0.75;
+}
+
+.hamburger {
+  width: 50%;
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  margin: 0 auto;
+  height: 3px;
+  background: white;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  width: 100%;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
+
+section {
+  padding: 3em 0;
+}
+
+.hero {
+  background: #3b4050;
+  color: white;
+}
+
+.hero__title > span {
+  color: #a59678;
+}
+
+.hero__text {
+  font-size: 1.5rem;
+  color: #6f737f;
+}
+
+.section--one {
+  background: #fff;
+}
+
+.main-header {
+  color: #a59678;
+  font-size: 1.875rem;
+}
+
+.main-text {
+  font-size: 1.125rem;
+  color: #6f737f;
+
+  margin: 0;
+  padding: 0.7em 0;
+}
+
+.header--two {
+  font-size: 2.25rem;
+}
+
+.main__text--two {
+  font-size: 1.3125rem;
+}
+
+.col--aside {
+  background: #2e323f;
+
+  padding: 2em;
+  margin: 2em 0 0 0;
+  text-align: center;
+}
+
+.header--light {
+  color: #fff;
+}
+
+.text--light {
+  color: #fff;
+}
+
+footer {
+  background: #3b4050;
+  padding: 3em 0;
+}
+
+.col--footer {
+  margin: 2em 0;
+}
+
+.footer-header {
+  font-size: 1.5rem;
+}
+
+.footer__subhead {
+  color: #a59678;
+  font-size: 1.3125rem;
+}
+
+.text--footer {
+  font-size: 1rem;
+}
+
+.footer__list {
+  padding: 0;
+  list-style: none;
+}
+
+.list__item--footer{
+  margin-top: 1em;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: #6f737f;
+}
+
+/* Layout styles can be used within the media queries!! */
+
+@media (min-width: 800px) {
+  aside {
+    display: flex;
+    gap: 2em;
+  }
+
+  .col--aside {
+    padding: 0.45em;
+    margin: 1em 0 0 0;
+  }
+
+  .hero__text {
+    align-self: flex-end;
+    margin-bottom: 3.6em;
+  }
+  .footer-header {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1051px) {
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+  }
+
+  .nav {
+    visibility: visible;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    position: relative;
+  }
+
+  .nav__list {
+    margin: 0;
+    display: flex;
+  }
+
+  .nav__list--primary {
+    margin-right: 3em;
+  }
+
+  .list__item + .list__item {
+    margin-left: 2em;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+  
+  .col--sectionone{
+    text-align: center;
+  }
+
+  .first-aside{
+    width: 60%;
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    gap: .9em;
+  }
+
+  .col--aside {
+    background: #2e323f;
+
+    padding: 2em;
+    margin: 0;
+    text-align: center;
+  }
+
+  .col--footer--about{
+    width: 35%;
+  }
+
+  .footer-header {
+    text-align: center;
+    font-size: 4rem;
+  }
+}

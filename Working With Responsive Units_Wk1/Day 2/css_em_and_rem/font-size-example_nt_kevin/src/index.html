@@ -1,0 +1,36 @@
+<p>resize this page to see it in action</p>
+<article class="ems">
+  <p>font-size: 1em (takes font size from root value declared on HTML tag)</p>
+  <section>
+    <p>font-size: 12px (will not scale as document is resized unless new media queries for it are written, but also reassigns root value of all children with em font-sizes to be relative to 12px)</p>
+    <section>
+      <p>font-size: 1em  (takes root value from direct parent of 12px; will not scale as document is resized  unless new media queries are written)</p>
+    </section>
+  </section>
+<!--   <section>
+    <p>font-size: 50% (will not scale as document is resized unless new media queries for it are written, but also reassigns root value of *some* children with em font-sizes to be relative to 50% of the root's value)</p>
+    <section>
+      <p>font-size: 1em  (takes root value from parent's older sibling of 12px — if we comment out the css for the 12px of the sibling this will display at 50% of root value)</p>
+    </section>
+  </section> -->
+</article>
+
+<article class="rems">
+  <p>font-size: 1rem  (takes font size from root value declared on HTML tag)</p>
+  <section>
+    <p>font-size: 12px (will not scale as document is resized unless new media queries are written)</p>
+    <section>
+      <p>font-size: 1rem  (is not affected by font-size of direct parent)</p>
+    </section>
+  </section>
+</article>
+
+<article class="pxs">
+  <p>font-size: 24px (will not scale as document is resized unless media queries for it specifically are written)</p>
+  <section>
+    <p>font-size: 12px (will not scale as document is resized unless media queries for it specifically are written) </p>
+    <section>
+      <p>font-size: 8px (will not scale as document is resized unless media queries for it specifically are written)</p>
+    </section>
+  </section>
+</article>
